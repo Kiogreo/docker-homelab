@@ -1,0 +1,4 @@
+services:
+  nixos:
+    image: nixos/nix
+

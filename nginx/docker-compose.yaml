@@ -1,0 +1,9 @@
+services:
+  nginx:
+    build: .
+    ports:
+      - "80:80"
+    expose:
+      - "80"
+    volumes:
+      - .:/var/www

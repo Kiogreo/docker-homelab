@@ -1,0 +1,4 @@
+services:
+  ollama-cpu:
+    image: ollama/ollama:latest
+

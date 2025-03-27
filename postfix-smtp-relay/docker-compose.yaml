@@ -1,0 +1,11 @@
+services:
+  postfix:
+    image: catatnight/postfix
+    restart: always
+    environment:
+      - MAILNAME=example.com
+      - SMTP_SERVER=smtp.example.com
+      - SMTP_USERNAME=root
+      - SMTP_PASSWORD=password
+    ports:
+      - "25:25"

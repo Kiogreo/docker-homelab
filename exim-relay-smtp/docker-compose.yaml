@@ -1,0 +1,12 @@
+services:
+  smtp:
+    image: docker.io/devture/exim-relay
+    user: 100:101
+    restart: always
+    ports:
+      - "25:8025"
+    environment:
+      HOSTNAME: example.com
+      SMARTHOST: smtp.example.com::587
+      SMTP_USERNAME: root
+      SMTP_PASSWORD: password
