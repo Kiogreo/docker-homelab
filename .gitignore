@@ -1,3 +1,13 @@
-pocket-base/pb_data
-etc-pihole
+*
+!**/*docker-compose.yaml
+!**/*docker-compose.yml
+!**/*.docker-compose.yaml
+!**/*.docker-compose.yml
+!**/*compose.yaml
+!**/*compose.yml
+!**/Dockerfile
+!**/.env.example
 
+!nginx/**/*
+
+exim-relay-smtp/swaks
