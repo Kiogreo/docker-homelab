@@ -1,0 +1,20 @@
+volumes:
+  ollama:
+  open-webui-gpu:
+
+services:
+  open-webui-gpu:
+    image: ghcr.io/open-webui/open-webui:ollama
+    ports:
+      - "3000:8080"
+    volumes:
+      - ollama:/root/.ollama
+      - open-webui-gpu:/app/backend/data
+    restart: always
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]

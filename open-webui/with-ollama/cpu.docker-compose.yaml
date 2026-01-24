@@ -1,0 +1,13 @@
+volumes:
+  ollama:
+  open-webui-cpu:
+
+services:
+  open-webui-cpu:
+    image: ghcr.io/open-webui/open-webui:ollama
+    ports:
+      - "3000:8080"
+    volumes:
+      - ollama:/root/.ollama
+      - open-webui-cpu:/app/backend/data
+    restart: always

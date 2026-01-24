@@ -1,0 +1,11 @@
+services:
+  nuclei:
+    image: projectdiscovery/nuclei:latest
+    restart: always
+    volumes:
+      - nuclei:/root/.config/nuclei
+      - nuclei:/root/nuclei-templates
+
+volumes:
+  nuclei:
+
