@@ -7,14 +7,36 @@ services:
     restart: always
     ports:
       - 3000:8080
+    environment:
+      WEBUI_ADMIN_NAME: Admin
+      WEBUI_ADMIN_EMAIL: admin@email.com
+      WEBUI_ADMIN_PASSWORD: admin
+      ENABLE_ADMIN_EXPORT: true
+      ENABLE_ADMIN_WORKSPACE_CONTENT_ACCESS: true
+      ENABLE_SIGNUP: true
+      ENABLE_SIGNUP_PASSWORD_CONFIRMATION: true
+      ENABLE_CHANNELS: true
+      ENABLE_FOLDERS: true
+      ENABLE_NOTES: true
+      ENABLE_MEMORIES: true
+      # USE_CUDA: true
+      # DOCKER: true
+      # USE_CUDA_DOCKER: true
+      # ENABLE_OLLAMA_API: true
+      # USE_OLLAMA_DOCKER: true
+      # OLLAMA_BASE_URL: http://localhost:11434
+      ENABLE_WEB_SEARCH: true
+      WEB_SEARCH_TRUST_ENV: true
+      ENABLE_IMAGE_GENERATION: true
+      USER_PERMISSIONS_FEATURES_DIRECT_TOOL_SERVERS: true
+      USER_PERMISSIONS_WORKSPACE_MODELS_ACCESS: true
     extra_hosts:
       host.docker.internal: host-gateway
     volumes:
       - open-webui:/app/backend/data
     deploy:
       resources:
-        reservation:
+        reservations:
           devices:
             - driver: nvidia
-              count: all
               capabilities: [gpu]
