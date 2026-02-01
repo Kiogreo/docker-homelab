@@ -1,0 +1,4 @@
+# TODO: check if this setup is correct
+services:
+  argocd:
+    image: argoproj/argocd:v2.6.15

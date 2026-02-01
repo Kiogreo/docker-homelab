@@ -1,0 +1,7 @@
+*
+!.gitignore
+!Dockerfile
+!docker-compose.yaml
+!.env.example
+!nginx.conf
+!index.html

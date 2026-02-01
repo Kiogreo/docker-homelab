@@ -1,0 +1,20 @@
+services:
+  tailscale-authkey:
+    image: tailscale/tailscale:stable
+    container_name: tailscale-authkey
+    hostname: docker@kiogreo-lab
+    environment:
+      TS_AUTHKEY: tskey-auth-kvXgTn4FMq11CNTRL-RJtp2sRKrRfCUezc7JCZRfm5q76ViB4qG
+      TS_STATE_DIR: /var/lib/tailscale
+      TS_USERSPACE: false
+      TS_ACCEPT_DNS: true
+    volumes:
+      - ${PWD}/tailscale/state:/var/lib/tailscale
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - net_admin
+    restart: unless-stopped
+  nginx:
+    image: nginx
+    network_mode: service:tailscale-authkey
