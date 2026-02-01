@@ -3,10 +3,12 @@
 !**/*docker-compose.yml
 !**/*.docker-compose.yaml
 !**/*.docker-compose.yml
+!**/*.docker-compose.*.yml
 !**/*compose.yaml
 !**/*compose.yml
 !**/Dockerfile
 !**/.env.example
+!README.md
 
 !nginx/**/*
 
